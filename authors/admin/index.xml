@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jan Zdenek</title>
+    <link>https://janzdenek.github.io/authors/admin/</link>
+    <description>Recent content on Jan Zdenek</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017-2019 Jan Zdenek</copyright>
+    
+	    <atom:link href="https://janzdenek.github.io/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://janzdenek.github.io/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://janzdenek.github.io/authors/admin/</guid>
+      <description>&lt;p&gt;Jan is a second-year Ph.D. student in information science and technology particularly interested in artificial intelligence, computer vision, and machine learning. He is a member of the Machine Perception Group (Nakayama Laboratory) at the University of Tokyo, which he joined in 2014. Before commencing his graduate studies at the University of Tokyo, he earned his bachelor&amp;rsquo;s degree in computer and information science at the Czech Technical University in Prague, Czech Republic, where he was born and grew up.&lt;/p&gt;
+
+&lt;p&gt;His research focuses on computer vision, in particular on understanding and processing of text in natural scene images. Recently, he has been interested in image generation using generative adversarial networks.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -4,11 +4,12 @@
     <title>Posts on Jan Zdenek</title>
     <link>https://janzdenek.github.io/post/</link>
     <description>Recent content in Posts on Jan Zdenek</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 Jan Zdenek</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0900</lastBuildDate>
-    <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2017-2019 Jan Zdenek</copyright>
+    
+	    <atom:link href="https://janzdenek.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
   </channel>
 </rss>
