@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kazuki Yoshizoe on Jan Zdenek</title>
+    <link>https://janzdenek.github.io/authors/kazuki-yoshizoe/</link>
+    <description>Recent content in Kazuki Yoshizoe on Jan Zdenek</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017-2019 Jan Zdenek</copyright>
+    <lastBuildDate>Wed, 20 Nov 2019 20:27:03 +0900</lastBuildDate>
+    
+	    <atom:link href="https://janzdenek.github.io/authors/kazuki-yoshizoe/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Faster AutoAugment: Learning Augmentation Strategies using Backpropagation</title>
+      <link>https://janzdenek.github.io/publication/faster-autoaugment_ibis/</link>
+      <pubDate>Wed, 20 Nov 2019 20:27:03 +0900</pubDate>
+      
+      <guid>https://janzdenek.github.io/publication/faster-autoaugment_ibis/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
