@@ -6,11 +6,29 @@
     <description>Recent content in Kazuki Yoshizoe on Jan Zdenek</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017-2019 Jan Zdenek</copyright>
-    <lastBuildDate>Wed, 20 Nov 2019 20:27:03 +0900</lastBuildDate>
+    <copyright>&amp;copy; 2017-2021 Jan Zdenek</copyright>
+    <lastBuildDate>Thu, 24 Sep 2020 20:27:03 +0900</lastBuildDate>
     
 	    <atom:link href="https://janzdenek.github.io/authors/kazuki-yoshizoe/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MADAO: データ拡張最適化のためのメタ的アプローチ (English title: Meta Approach to Data Augmentation Optimization)</title>
+      <link>https://janzdenek.github.io/publication/madao/</link>
+      <pubDate>Thu, 24 Sep 2020 20:27:03 +0900</pubDate>
+      
+      <guid>https://janzdenek.github.io/publication/madao/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Faster AutoAugment: Learning Augmentation Strategies using Backpropagation</title>
+      <link>https://janzdenek.github.io/publication/faster-autoaugment/</link>
+      <pubDate>Sun, 20 Sep 2020 20:27:03 +0900</pubDate>
+      
+      <guid>https://janzdenek.github.io/publication/faster-autoaugment/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Faster AutoAugment: Learning Augmentation Strategies using Backpropagation</title>

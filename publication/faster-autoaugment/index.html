@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Personal page of Jan Zdenek">
+  <meta name="description" content="Data augmentation methods are indispensable heuristics to boost the performance of deep neural networks, especially in image recognition tasks. Recently, several studies have shown that augmentation strategies found by search algorithms outperform hand-made strategies. Such methods employ black-box search algorithms over image transformations with continuous or discrete parameters and require a long time to obtain better strategies. In this paper, we propose a differentiable policy search pipeline for data augmentation, which is much faster than previous methods. We introduce approximate gradients for several transformation operations with discrete parameters as well as a differentiable mechanism for selecting operations. As the objective of training, we minimize the distance between the distributions of augmented and original data, which can be differentiated. We show that our method, Faster AutoAugment, achieves significantly faster searching than prior methods without a performance drop.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://janzdenek.github.io/post/">
+  <link rel="alternate" hreflang="en-us" href="https://janzdenek.github.io/publication/faster-autoaugment/">
 
   
 
@@ -91,15 +91,12 @@
   
 
   
-  <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Jan Zdenek">
-  <link rel="feed" href="/post/index.xml" type="application/rss+xml" title="Jan Zdenek">
-  
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://janzdenek.github.io/post/">
+  <link rel="canonical" href="https://janzdenek.github.io/publication/faster-autoaugment/">
 
   
   
@@ -110,24 +107,26 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Jan Zdenek">
-  <meta property="og:url" content="https://janzdenek.github.io/post/">
-  <meta property="og:title" content="Posts | Jan Zdenek">
-  <meta property="og:description" content="Personal page of Jan Zdenek"><meta property="og:image" content="https://janzdenek.github.io/img/profilepic.jpg">
+  <meta property="og:url" content="https://janzdenek.github.io/publication/faster-autoaugment/">
+  <meta property="og:title" content="Faster AutoAugment: Learning Augmentation Strategies using Backpropagation | Jan Zdenek">
+  <meta property="og:description" content="Data augmentation methods are indispensable heuristics to boost the performance of deep neural networks, especially in image recognition tasks. Recently, several studies have shown that augmentation strategies found by search algorithms outperform hand-made strategies. Such methods employ black-box search algorithms over image transformations with continuous or discrete parameters and require a long time to obtain better strategies. In this paper, we propose a differentiable policy search pipeline for data augmentation, which is much faster than previous methods. We introduce approximate gradients for several transformation operations with discrete parameters as well as a differentiable mechanism for selecting operations. As the objective of training, we minimize the distance between the distributions of augmented and original data, which can be differentiated. We show that our method, Faster AutoAugment, achieves significantly faster searching than prior methods without a performance drop."><meta property="og:image" content="https://janzdenek.github.io/img/profilepic.jpg">
   <meta property="og:locale" content="en-us">
   
+  <meta property="article:published_time" content="2020-09-20T20:27:03&#43;09:00">
   
-  
-
-  
-
-
+  <meta property="article:modified_time" content="2020-09-20T20:27:03&#43;09:00">
   
 
+  
+
+
+  
 
 
 
 
-  <title>Posts | Jan Zdenek</title>
+
+  <title>Faster AutoAugment: Learning Augmentation Strategies using Backpropagation | Jan Zdenek</title>
 
 </head>
 
@@ -314,47 +313,238 @@
 </nav>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
+  <div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
 
   
 
+
+
+
+
+
+
+
+
+
+
+
   
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Faster AutoAugment: Learning Augmentation Strategies using Backpropagation</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2020-09-20 20:27:03 &#43;0900 JST" itemprop="datePublished">
+<meta content="2020-09-20 20:27:03 &#43;0900 JST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/ryuichiro-hataya/">Ryuichiro Hataya</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/jan-zdenek/">Jan Zdenek</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/kazuki-yoshizoe/">Kazuki Yoshizoe</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/hideki-nakayama/">Hideki Nakayama</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>September 2020</time>
+  </span>
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Faster%20AutoAugment%3a%20Learning%20Augmentation%20Strategies%20using%20Backpropagation&amp;url=https%3a%2f%2fjanzdenek.github.io%2fpublication%2ffaster-autoaugment%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fjanzdenek.github.io%2fpublication%2ffaster-autoaugment%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fjanzdenek.github.io%2fpublication%2ffaster-autoaugment%2f&amp;title=Faster%20AutoAugment%3a%20Learning%20Augmentation%20Strategies%20using%20Backpropagation"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fjanzdenek.github.io%2fpublication%2ffaster-autoaugment%2f&amp;title=Faster%20AutoAugment%3a%20Learning%20Augmentation%20Strategies%20using%20Backpropagation"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Faster%20AutoAugment%3a%20Learning%20Augmentation%20Strategies%20using%20Backpropagation&amp;body=https%3a%2f%2fjanzdenek.github.io%2fpublication%2ffaster-autoaugment%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract" itemprop="text">Data augmentation methods are indispensable heuristics to boost the performance of deep neural networks, especially in image recognition tasks. Recently, several studies have shown that augmentation strategies found by search algorithms outperform hand-made strategies. Such methods employ black-box search algorithms over image transformations with continuous or discrete parameters and require a long time to obtain better strategies. In this paper, we propose a differentiable policy search pipeline for data augmentation, which is much faster than previous methods. We introduce approximate gradients for several transformation operations with discrete parameters as well as a differentiable mechanism for selecting operations. As the objective of training, we minimize the distance between the distributions of augmented and original data, which can be differentiated. We show that our method, Faster AutoAugment, achieves significantly faster searching than prior methods without a performance drop.</p>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            
+            
+            <a href="/publication/#1">
+              Conference paper
+            </a>
+            
+            <a href="/publication/#9">
+              
+            </a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9"><em>European Conference on Computer Vision (ECCV 2020)</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+    
+
+
+
+
+
+
+
+
   
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1 itemprop="name">Posts</h1>
-
   
 
+
+
+
+
   
+  
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/authors/ryuichiro-hataya/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+
+  </div>
 </div>
 
 
-
-<div class="universal-wrapper">
-
-  
-
-  
-  
-
-  
-
-
-</div>
 
       
 
