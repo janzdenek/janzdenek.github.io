@@ -7,10 +7,28 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017-2021 Jan Zdenek</copyright>
-    <lastBuildDate>Sun, 28 Mar 2021 19:23:48 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 23 Apr 2021 20:27:03 +0900</lastBuildDate>
     
 	    <atom:link href="https://janzdenek.github.io/authors/hideki-nakayama/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JokerGAN: Memory-Efficient Model for Handwritten Text Generation with Text Line Awareness</title>
+      <link>https://janzdenek.github.io/publication/jokergan/</link>
+      <pubDate>Fri, 23 Apr 2021 20:27:03 +0900</pubDate>
+      
+      <guid>https://janzdenek.github.io/publication/jokergan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meta Approach to Data Augmentation Optimization</title>
+      <link>https://janzdenek.github.io/publication/madao_iccv/</link>
+      <pubDate>Fri, 23 Apr 2021 20:25:03 +0900</pubDate>
+      
+      <guid>https://janzdenek.github.io/publication/madao_iccv/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Efficient Model for Handwritten Text Generation with Text Line Awareness</title>
