@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="現在、ACM Multimediaで手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています">
+  <meta name="description" content="現在、ACM Multimedia 2021で手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています。 手書き文">
 
   
   <link rel="alternate" hreflang="en-us" href="https://janzdenek.github.io/jokergan/">
@@ -109,7 +109,7 @@
   <meta property="og:site_name" content="Jan Zdenek">
   <meta property="og:url" content="https://janzdenek.github.io/jokergan/">
   <meta property="og:title" content="JokerGAN | Jan Zdenek">
-  <meta property="og:description" content="現在、ACM Multimediaで手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています"><meta property="og:image" content="https://janzdenek.github.io/img/profilepic.jpg">
+  <meta property="og:description" content="現在、ACM Multimedia 2021で手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています。 手書き文"><meta property="og:image" content="https://janzdenek.github.io/img/profilepic.jpg">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2021-04-26T00:00:00&#43;00:00">
@@ -426,13 +426,13 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      <p>現在、ACM Multimediaで手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています。</p>
+      <p>現在、ACM Multimedia 2021で手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています。</p>
 
-<p>手書き文字画像生成の既存のState-of-the-art手法のモデルは多くのメモリーを必要として非常に非効率的です。さらに、必要なメモリー量はcharacter setのサイズ（クラス数）に線形的に依存しています。Character setが大きいデータの場合（日本語、中国語など）、必要なメモリーが多すぎてNVIDIA V100などの普通のGPUにモデルが入らないです。</p>
+<p>手書き文字画像生成の既存のstate-of-the-art手法のモデルは多くのメモリーを必要として非常に非効率的です。さらに、必要なメモリー量はcharacter setのサイズ（クラス数）に線形的に依存しています。Character setが大きいデータの場合（日本語、中国語など）、必要なメモリーが多すぎてNVIDIA V100などの普通のGPUにモデルが入らないです。</p>
 
 <p>この研究ではメモリーのボトルネック（指定したcharacter sequenceの生成のための機能）をなくして、そしてその代わりにmulti-class conditional batch normalization（MCCBN)を提案しました。MCCBNを使うと、character setのサイズが変わっても、モデルのサイズはほぼ変わりません。</p>
 
-<p>いくつかの実験を行って、既存手法と比較しました。AMTを使ってHuman evaluationを行った結果、提案手法の生成画像は関連研究の手法より自然に見えることが判明しました。さらに、学習したモデルで生成した手書き文字の画像を手書き文字認識用のデータ拡張に使って、関連研究より高い認識の性能向上を達成しました。結論として、提案手法のモデルは既存手法より必要なメモリー量が少なくて、尚、性能が既存手法より高いです。</p>
+<p>いくつかの実験を行って、既存手法と比較しました。AMTを使ってhuman evaluationを行った結果、提案手法の生成画像は関連研究の手法より自然に見えることが判明しました。さらに、学習したモデルで生成した手書き文字の画像を手書き文字認識用のデータ拡張に使って、関連研究より高い認識の性能向上を達成しました。GANを用いた画像生成のタスクでよく使われている評価指標も使って、提案手法が既存手法より優れた性能を発揮していることが判明しました。結論として、提案手法のモデルは既存手法より必要なメモリー量が少なくて、尚、性能が既存手法より高いです。</p>
 
 <p>必要なメモリーの減少と効率化のおかげで、character setのサイズが多きい日本語のデータセットでも手書き文字画像生成のモデルを学習することができます。中国語や日本語の手書き文字画像生成（noiseからの生成）に関しては関連研究がなくて、私の研究は初の日本語手書き文字画像生成の試みです。</p>
 
