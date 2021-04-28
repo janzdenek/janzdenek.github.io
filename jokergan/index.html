@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Jan Zdenek">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="title: An example title summary: Here we describe how to add a page to your site. date: &ldquo;2021-04-26T00:00:00Z&rdquo;
+reading_time: false # Show estimated reading time? share: false # Show social sharing links? profile: false # Show author profile? comments: false # Show comments?
+Optional header image (relative to assets/media/ folder). header: caption: &ldquo;&rdquo;
+image: &ldquo;&rdquo; 現在、ACM Multimediaで手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています。 手書き文字画像生成の既存のState-of-the-art手法のモデルは多くのメモリーを必要として非常に非効率的です。さらに、必要なメモリー量はcharacter setのサイズ（クラス数）に線形的に依存しています。Character setが大きいデータの場合（日本語、中国語など）、必要なメモリーが多すぎてNVIDIA V100などの普通のGPUにモデルが入らないです。 この研究ではメモリーのボトルネック（指定したcharacter sequenceの生成のための機能）をなくして、そしてその代わりにmulti-class conditional batch normalization（MCCBN)を提案しました。MCCBNを使うと、character setのサイズが変わっても、モデルのサイズはほぼ変わりません。 いくつかの実験を行って、既存手法と比較しました。AMTを使ってHuman evaluationを行った結果、提案手法の生成画像は関連研究の手法より自然に見えることが判明しました。さらに、学習したモデルで生成した手書き文字の画像を手書き文字認識用のデータ拡張に使って、関連研究より高い認識の性能向上を達成しました。結論として、提案手法のモデルは既存手法より必要なメモリー量が少なくて、尚、性能が既存手法より高いです。 メモリーおかげで、character setのサイズが多きい日本語のデータセットでも手書き文字画像生成のモデルを学習することができます。中国語や日本語の手書き文字画像生成（noiseからの生成）に関しては関連研究がなくて、私の研究は初の日本語手書き文字画像生成の試みです。">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://janzdenek.github.io/jokergan/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.747d92dc45be93ba6055a623fe5bcc0a.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://janzdenek.github.io/jokergan/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Jan Zdenek">
+  <meta property="og:url" content="https://janzdenek.github.io/jokergan/">
+  <meta property="og:title" content=" | Jan Zdenek">
+  <meta property="og:description" content="title: An example title summary: Here we describe how to add a page to your site. date: &ldquo;2021-04-26T00:00:00Z&rdquo;
+reading_time: false # Show estimated reading time? share: false # Show social sharing links? profile: false # Show author profile? comments: false # Show comments?
+Optional header image (relative to assets/media/ folder). header: caption: &ldquo;&rdquo;
+image: &ldquo;&rdquo; 現在、ACM Multimediaで手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています。 手書き文字画像生成の既存のState-of-the-art手法のモデルは多くのメモリーを必要として非常に非効率的です。さらに、必要なメモリー量はcharacter setのサイズ（クラス数）に線形的に依存しています。Character setが大きいデータの場合（日本語、中国語など）、必要なメモリーが多すぎてNVIDIA V100などの普通のGPUにモデルが入らないです。 この研究ではメモリーのボトルネック（指定したcharacter sequenceの生成のための機能）をなくして、そしてその代わりにmulti-class conditional batch normalization（MCCBN)を提案しました。MCCBNを使うと、character setのサイズが変わっても、モデルのサイズはほぼ変わりません。 いくつかの実験を行って、既存手法と比較しました。AMTを使ってHuman evaluationを行った結果、提案手法の生成画像は関連研究の手法より自然に見えることが判明しました。さらに、学習したモデルで生成した手書き文字の画像を手書き文字認識用のデータ拡張に使って、関連研究より高い認識の性能向上を達成しました。結論として、提案手法のモデルは既存手法より必要なメモリー量が少なくて、尚、性能が既存手法より高いです。 メモリーおかげで、character setのサイズが多きい日本語のデータセットでも手書き文字画像生成のモデルを学習することができます。中国語や日本語の手書き文字画像生成（noiseからの生成）に関しては関連研究がなくて、私の研究は初の日本語手書き文字画像生成の試みです。"><meta property="og:image" content="https://janzdenek.github.io/img/profilepic.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  
+  
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title> | Jan Zdenek</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Jan Zdenek</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience">
+            
+            <span>Experience</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name"></h1>
+
+  
+
+  
+    
+
+
+
+<meta content="" itemprop="datePublished">
+<meta content="" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fjanzdenek.github.io%2fjokergan%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fjanzdenek.github.io%2fjokergan%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fjanzdenek.github.io%2fjokergan%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fjanzdenek.github.io%2fjokergan%2f&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=https%3a%2f%2fjanzdenek.github.io%2fjokergan%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>title: An example title
+summary: Here we describe how to add a page to your site.
+date: &ldquo;2021-04-26T00:00:00Z&rdquo;</p>
+
+<p>reading_time: false  # Show estimated reading time?
+share: false  # Show social sharing links?
+profile: false  # Show author profile?
+comments: false  # Show comments?</p>
+
+<h1 id="optional-header-image-relative-to-assets-media-folder">Optional header image (relative to <code>assets/media/</code> folder).</h1>
+
+<p>header:
+  caption: &ldquo;&rdquo;</p>
+
+<h2 id="image">image: &ldquo;&rdquo;</h2>
+
+<p>現在、ACM Multimediaで手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています。
+手書き文字画像生成の既存のState-of-the-art手法のモデルは多くのメモリーを必要として非常に非効率的です。さらに、必要なメモリー量はcharacter setのサイズ（クラス数）に線形的に依存しています。Character setが大きいデータの場合（日本語、中国語など）、必要なメモリーが多すぎてNVIDIA V100などの普通のGPUにモデルが入らないです。
+この研究ではメモリーのボトルネック（指定したcharacter sequenceの生成のための機能）をなくして、そしてその代わりにmulti-class conditional batch normalization（MCCBN)を提案しました。MCCBNを使うと、character setのサイズが変わっても、モデルのサイズはほぼ変わりません。
+いくつかの実験を行って、既存手法と比較しました。AMTを使ってHuman evaluationを行った結果、提案手法の生成画像は関連研究の手法より自然に見えることが判明しました。さらに、学習したモデルで生成した手書き文字の画像を手書き文字認識用のデータ拡張に使って、関連研究より高い認識の性能向上を達成しました。結論として、提案手法のモデルは既存手法より必要なメモリー量が少なくて、尚、性能が既存手法より高いです。
+メモリーおかげで、character setのサイズが多きい日本語のデータセットでも手書き文字画像生成のモデルを学習することができます。中国語や日本語の手書き文字画像生成（noiseからの生成）に関しては関連研究がなくて、私の研究は初の日本語手書き文字画像生成の試みです。</p>
+
+    </div>
+
+    
+
+
+
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBsmuoZGoNQnv1sq1E8TWJf09AOza2aKGk"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.174c04eddb854712a9c7aaae9021446f.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2017-2021 Jan Zdenek &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
