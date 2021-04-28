@@ -7,10 +7,24 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017-2021 Jan Zdenek</copyright>
-    <lastBuildDate>Fri, 23 Apr 2021 20:27:03 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://janzdenek.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JokerGAN</title>
+      <link>https://janzdenek.github.io/jokergan/</link>
+      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://janzdenek.github.io/jokergan/</guid>
+      <description>&lt;p&gt;現在、ACM Multimediaで手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています。
+手書き文字画像生成の既存のState-of-the-art手法のモデルは多くのメモリーを必要として非常に非効率的です。さらに、必要なメモリー量はcharacter setのサイズ（クラス数）に線形的に依存しています。Character setが大きいデータの場合（日本語、中国語など）、必要なメモリーが多すぎてNVIDIA V100などの普通のGPUにモデルが入らないです。
+この研究ではメモリーのボトルネック（指定したcharacter sequenceの生成のための機能）をなくして、そしてその代わりにmulti-class conditional batch normalization（MCCBN)を提案しました。MCCBNを使うと、character setのサイズが変わっても、モデルのサイズはほぼ変わりません。
+いくつかの実験を行って、既存手法と比較しました。AMTを使ってHuman evaluationを行った結果、提案手法の生成画像は関連研究の手法より自然に見えることが判明しました。さらに、学習したモデルで生成した手書き文字の画像を手書き文字認識用のデータ拡張に使って、関連研究より高い認識の性能向上を達成しました。結論として、提案手法のモデルは既存手法より必要なメモリー量が少なくて、尚、性能が既存手法より高いです。
+メモリーおかげで、character setのサイズが多きい日本語のデータセットでも手書き文字画像生成のモデルを学習することができます。中国語や日本語の手書き文字画像生成（noiseからの生成）に関しては関連研究がなくて、私の研究は初の日本語手書き文字画像生成の試みです。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>JokerGAN: Memory-Efficient Model for Handwritten Text Generation with Text Line Awareness</title>
@@ -100,38 +114,6 @@
       
       <guid>https://janzdenek.github.io/publication/script-identification-using-bag-of-words-with-entropy-weighted-patches/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://janzdenek.github.io/jokergan/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://janzdenek.github.io/jokergan/</guid>
-      <description>
-
-&lt;p&gt;title: An example title
-summary: Here we describe how to add a page to your site.
-date: &amp;ldquo;2021-04-26T00:00:00Z&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;reading_time: false  # Show estimated reading time?
-share: false  # Show social sharing links?
-profile: false  # Show author profile?
-comments: false  # Show comments?&lt;/p&gt;
-
-&lt;h1 id=&#34;optional-header-image-relative-to-assets-media-folder&#34;&gt;Optional header image (relative to &lt;code&gt;assets/media/&lt;/code&gt; folder).&lt;/h1&gt;
-
-&lt;p&gt;header:
-  caption: &amp;ldquo;&amp;rdquo;&lt;/p&gt;
-
-&lt;h2 id=&#34;image&#34;&gt;image: &amp;ldquo;&amp;rdquo;&lt;/h2&gt;
-
-&lt;p&gt;現在、ACM Multimediaで手書き文字の画像生成の論文が査読中です。この論文では手書き文字の画像生成のための新しい手法を提案しています。
-手書き文字画像生成の既存のState-of-the-art手法のモデルは多くのメモリーを必要として非常に非効率的です。さらに、必要なメモリー量はcharacter setのサイズ（クラス数）に線形的に依存しています。Character setが大きいデータの場合（日本語、中国語など）、必要なメモリーが多すぎてNVIDIA V100などの普通のGPUにモデルが入らないです。
-この研究ではメモリーのボトルネック（指定したcharacter sequenceの生成のための機能）をなくして、そしてその代わりにmulti-class conditional batch normalization（MCCBN)を提案しました。MCCBNを使うと、character setのサイズが変わっても、モデルのサイズはほぼ変わりません。
-いくつかの実験を行って、既存手法と比較しました。AMTを使ってHuman evaluationを行った結果、提案手法の生成画像は関連研究の手法より自然に見えることが判明しました。さらに、学習したモデルで生成した手書き文字の画像を手書き文字認識用のデータ拡張に使って、関連研究より高い認識の性能向上を達成しました。結論として、提案手法のモデルは既存手法より必要なメモリー量が少なくて、尚、性能が既存手法より高いです。
-メモリーおかげで、character setのサイズが多きい日本語のデータセットでも手書き文字画像生成のモデルを学習することができます。中国語や日本語の手書き文字画像生成（noiseからの生成）に関しては関連研究がなくて、私の研究は初の日本語手書き文字画像生成の試みです。&lt;/p&gt;
-</description>
     </item>
     
   </channel>
