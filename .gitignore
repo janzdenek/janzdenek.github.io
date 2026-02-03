@@ -1,2 +1,10 @@
 public/
 .idea/
+
+# Hugo
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Hugo Modules
+/go.sum

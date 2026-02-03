@@ -3,7 +3,7 @@
 
 title: "Faster AutoAugment: Learning Augmentation Strategies using Backpropagation"
 authors: ["Ryuichiro Hataya", "Jan Zdenek", "Kazuki Yoshizoe", "Hideki Nakayama"]
-date: 2019-11
+date: 2019-11-01
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
@@ -13,7 +13,7 @@ publishDate: 2019-11-20T20:27:03+09:00
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
-publication_types: [1, 10]
+publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
 publication: "*The 22nd Information-Based Induction Sciences Workshop (IBIS 2019)*"
@@ -24,7 +24,7 @@ abstract: ""
 # Summary. An optional shortened abstract.
 summary: ""
 
-tags: []
+tags: ["non-peer-reviewed"]
 categories: []
 featured: false
 

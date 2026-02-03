@@ -13,7 +13,7 @@ publishDate: 2019-06-08T19:22:29+09:00
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent; 9 = peer-reviewed; 10 = without peer review
-publication_types: [1, 9]
+publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
 publication: "*The 14th IAPR International Conference on Document Analysis and Recognition (ICDAR 2017)*."
@@ -24,7 +24,7 @@ abstract: "The increasing interest in scene text reading in multilingual environ
 # Summary. An optional shortened abstract.
 summary: ""
 
-tags: []
+tags: ["peer-reviewed"]
 categories: []
 featured: false
 

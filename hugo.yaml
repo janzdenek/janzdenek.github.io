@@ -1,0 +1,39 @@
+module:
+  imports:
+    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify
+    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-bootstrap/v5
+
+title: Jan Zdenek
+baseURL: https://janzdenek.github.io/
+copyright: "© 2017-2026 Jan Zdenek"
+
+defaultContentLanguage: en
+hasCJKLanguage: true
+enableEmoji: true
+enableGitInfo: false
+
+# Pagination
+pagination:
+  pagerSize: 10
+
+outputs:
+  home: [HTML, RSS, JSON]
+  section: [HTML, RSS]
+
+imaging:
+  resampleFilter: lanczos
+  quality: 90
+  anchor: smart
+
+taxonomies:
+  tag: tags
+  category: categories
+  publication_type: publication_types
+  author: authors
+
+ignoreFiles: ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+# Security policy
+security:
+  funcs:
+    getenv: ['^HUGO_', '^CI$', '^WC_']

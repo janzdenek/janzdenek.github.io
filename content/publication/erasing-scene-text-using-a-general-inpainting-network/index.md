@@ -3,7 +3,7 @@
 
 title: "Erasing Scene Text Using a General Inpainting Network"
 authors: ["Jan Zdenek", "Hideki Nakayama"]
-date: 2019-07
+date: 2019-07-01
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
@@ -13,7 +13,7 @@ publishDate: 2019-06-08T19:23:48+09:00
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent; 9 = peer-reviewed; 10 = without peer review
-publication_types: [1, 10]
+publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
 publication: "*The 22nd Meeting on Image Recognition and Understanding (MIRU 2019)*."
@@ -24,7 +24,7 @@ abstract: "Scene text erasing is a task of removing text from natural scene imag
 # Summary. An optional shortened abstract.
 summary: ""
 
-tags: []
+tags: ["non-peer-reviewed"]
 categories: []
 featured: false
 

@@ -1,0 +1,74 @@
+# Site description for SEO
+description: "Personal page of Jan Zdenek"
+
+# Appearance
+appearance:
+  theme_day: minimal
+  theme_night: minimal
+  font: native
+  font_size: L
+
+# Site features
+features:
+  syntax_highlighter:
+    enable: true
+    theme_light: github-light
+    theme_dark: dracula
+  math:
+    enable: false
+  privacy_pack:
+    enable: false
+
+# Locale
+locale:
+  date_format: 'Jan 2, 2006'
+  time_format: '3:04 PM'
+
+# Contact information
+contact:
+  email: jan@nlab.ci.i.u-tokyo.ac.jp
+  phone: ''
+  address:
+    street: '1-1-1 Yayoi, Bunkyo'
+    city: Tokyo
+    region: ''
+    postcode: '113-0032'
+    country: Japan
+    country_code: JP
+  coordinates:
+    latitude: '35.715826'
+    longitude: '139.761044'
+  office_hours: ''
+  appointment_url: ''
+  # Google Maps API key (for map display)
+  google_maps_api_key: 'AIzaSyBsmuoZGoNQnv1sq1E8TWJf09AOza2aKGk'
+
+# Site header
+header:
+  navbar:
+    enable: true
+    align: r
+    show_logo: false
+    show_language: false
+    show_day_night: true
+    show_search: true
+    highlight_active_link: true
+
+# Site footer
+footer:
+  copyright:
+    notice: '© 2017-{year} Jan Zdenek'
+
+# Social sharing
+sharing_image: 'profilepic.jpg'
+
+# Publications
+publications:
+  date_format: 'January 2006'
+  citation_style: apa
+
+# Search
+search:
+  provider: wowchemy
+  wowchemy:
+    min_length: 1

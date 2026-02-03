@@ -1,6 +1,6 @@
 ---
 # Display name
-name: Jan Zdenek
+title: Jan Zdenek
 
 # Username (this should match the folder name)
 authors:
@@ -23,7 +23,7 @@ bio: My research interests are computer vision and machine learning.
 interests:
 - Computer Vision
 - Machine Learning
-- Artifical Intelligence
+- Artificial Intelligence
 - Image Generation
 
 education:
@@ -31,12 +31,18 @@ education:
   - course: PhD in Information Science and Technology
     institution: The University of Tokyo
     year: present
+    date_start: 2017-04-01
+    date_end: ''
   - course: Master of Information Science and Technology
     institution: The University of Tokyo
     year: 2017
+    date_start: 2015-04-01
+    date_end: 2017-03-31
   - course: Bachelor of Computer and Information Science
     institution: Czech Technical University in Prague
     year: 2014
+    date_start: 2010-09-01
+    date_end: 2014-06-30
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
