@@ -1,0 +1,127 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Jan Zdenek
+  given: Jan
+  family: Zdenek
+  alternate: ''  # Example: 王伟
+  pronunciation: ''  # Example: Wáng Wěi
+  pronouns: ''
+postnominals:
+  - PhD
+role: Research Scientist
+bio: |
+  Jan is a research scientist at CyberAgent, where he works on artificial intelligence and computer vision 
+  with a focus on image generation and editing. He received his PhD in Information Science and Technology 
+  from the University of Tokyo, where his research centered on image generation. Prior to that, he received 
+  his Master's degree in Creative Informatics from the University of Tokyo, and his Bachelor's degree 
+  in Computer and Information Science from the Czech Technical University in Prague. 
+  Born and raised in the Czech Republic, he currently works in Japan.
+
+affiliations:
+  - name: CyberAgent AI Lab
+    url: https://research.cyberagent.ai/
+
+links:
+  - icon: brands/x
+    url: https://x.com/jan_zde
+  - icon: brands/github
+    url: https://github.com/janzd
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/jan-zdeněk-3907b74a
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=qylVL6wAAAAJ
+
+interests:
+  - Artifical Intelligence
+  - Computer Vision
+  - Machine Learning
+  - Image Generation
+
+education:
+  - degree: PhD in Information Science and Technology
+    institution: University of Tokyo
+    start: 2017-10-01
+    end: 2022-09-30
+    summary: |
+      Research on image generation and editing.
+      Thesis on generation and editing of handwritten text.
+  - degree: MS in Information Science and Technology
+    institution: University of Tokyo
+    start: 2015-09-23
+    end: 2017-09-30
+  - degree: BE in Information and Computer Science
+    institution: Czech Technical University in Prague
+    start: 2011-09-01
+    end: 2014-06-30
+
+experience:
+  - role: Research Scientist
+    org: CyberAgent
+    start: 2022-04-01
+    summary: |
+      Conducting research on image generation and editing tasks.
+  - role: Research Assistant
+    org: The University of Tokyo, Graduate School of Information Science and Technology
+    start: 2020-10-01
+    end: 2022-03-31
+    summary: |
+      Participated in Beyond AI, a joint research program of The University of Tokyo and Softbank.
+      Research on image generation of handwritten text and text in natural scene images.
+  - role: Machine Learning Engineer Intern
+    org: RESTAR
+    start: 2019-02-01
+    end: 2019-05-31
+    summary: |
+      Participated in development of an OCR system for automatic conversion of real estate data documents 
+      from PDF to machine-readable form for an automatic generation of database of real estate data.
+  - role: Research Intern
+    org: Center for Machine Perception
+    start: 2014-07-01
+    end: 2014-12-31
+    summary: |
+      Participated in research on scene text detection and recognition.
+
+languages:
+  - name: Czech
+    level: 5
+    label: Native
+  - name: English
+    level: 5
+    label: Fluent
+  - name: Japanese
+    level: 4.5
+    label: Fluent
+
+awards:
+  - title: Outstanding Reviewer CVPR 2025
+    awarder: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+    summary: Outstanding Reviewer Award at the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2025.
+    date: 2025-06-11
+  - title: MIRU 2020 Student Paper Award
+    awarder: Meeting on Image Recognition and Understanding
+    summary: |-
+      Best Student Paper Award at the Meeting on Image Recognition and Understanding (MIRU) 2020 for the paper by Hataya R.,
+      Zdenek J., Yoshizoe K., Nakayama H., titled "MADAO: データ拡張最適化のためのメタ的アプローチ (English title: Meta Approach
+      to Data Augmentation Optimization)".
+    date: 2020-08-05
+  - title: Student Incentive Award 2017
+    awarder: The Japanese Society for Artificial Intelligence (JSAI) Annual Conference
+    summary: |-
+      Student Incentive Award at the Japanese Society for Artificial Intelligence (JSAI) Annual Conference 2017
+      for the paper titled "Script Identification using Bag-of-Words with Entropy-weighted Patches"
+    date: "2017-07-31"
+  - title: Japanese Government (MEXT) Scholarship for Research Students
+    awarder: Ministry of Education, Culture, Sports, Science and Technology (Government of Japan)
+    summary: |-
+      I was selected as a recipient of the Japanese Government (Monbukagakusho - MEXT) Scholarship for Research Students
+      from 2015 to 2017 for the duration of my Master's program at the University of Tokyo.
+      Later, I received a recommendation by the university for an extension of my scholarship for my PhD course until 2020.
+    date: 2015-04-01
+  - title: Dean's Award for an Outstanding Bachelor Thesis
+    awarder: Czech Technical University in Prague
+    summary: |-
+      Dean's Award for an Outstanding Bachelor Thesis at the Czech Technical University in Prague for the bachelor thesis
+      titled "Mobile Application for Recognition of Japanese Writing System"
+    date: 2014-06-30

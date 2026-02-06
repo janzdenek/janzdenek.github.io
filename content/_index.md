@@ -1,133 +1,137 @@
 ---
-title: ""
+# Leave the homepage title empty to use the site title
+title: ''
+summary: ''
+date: 2026-02-06
 type: landing
 
+design:
+  # Default section spacing
+  spacing: '5rem'
+
 sections:
-  # Biography
-  - block: markdown
-    id: about
+  - block: resume-biography-3
     content:
-      title: Jan Zdenek
-      subtitle: PhD Student at the University of Tokyo
-      text: |
-        ![Profile Picture](img/portrait.jpg)
-
-        Jan is a third-year Ph.D. student in information science and technology particularly interested in artificial intelligence, computer vision, and machine learning. He is a member of the Machine Perception Group (Nakayama Laboratory) at the University of Tokyo, which he joined in 2015. Before commencing his graduate studies at the University of Tokyo, he earned his bachelor's degree in computer and information science at the Czech Technical University in Prague, Czech Republic, where he was born and grew up.
-
-        His research focuses on computer vision, in particular on image generation and text in natural scene images. Recently, he has been interested in application of generative adversarial networks for handwritten text and text in natural scene images.
-
-        **Interests:** Computer Vision • Machine Learning • Artificial Intelligence • Image Generation
+      # Choose a user profile to display (a folder name within `content/authors/`)
+      username: me
+      text: ''
+      headings:
+        about: 'Bio'
+        education: ''
+        interests: ''
     design:
-      columns: '2'
+      # Use the new Gradient Mesh which automatically adapts to the selected theme colors
+      background:
+        gradient_mesh:
+          enable: true
 
-  # Publications (peer-reviewed)
-  - block: collection
-    id: publications
+      # Name heading sizing to accommodate long or short names
+      name:
+        size: md # Options: xs, sm, md, lg (default), xl
+
+      # Avatar customization
+      avatar:
+        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
+        shape: circle # Options: circle (default), square, rounded
+  - block: resume-experience
+    id: experience
     content:
-      title: Publications
-      subtitle: with peer review
-      text: ""
+      # The user's folder name in `content/authors/`
+      username: me
+    design:
+      # Hugo date format
+      date_format: 'January 2006'
+      # Education or Experience section first?
+      is_education_first: false
+  - block: collection
+    id: papers
+    content:
+      title: Publications (w/ peer review)
       filters:
         folders:
-          - publication
-        tags:
-          - peer-reviewed
+          - publications
+        featured_only: false
+    design:
+      view: citation
+  - block: collection
+    content:
+      title: Other papers
+      text: 'Papers w/o peer review (e.g. domestic conference presentations)'
+      filters:
+        folders:
+          - publications_non-peer-review
         exclude_featured: false
     design:
-      columns: '2'
       view: citation
-
-  # Other Publications (non-peer-reviewed)
   - block: collection
-    id: other-publications
-    content:
-      title: Other Publications
-      subtitle: without peer review
-      text: ""
-      filters:
-        folders:
-          - publication
-        tags:
-          - non-peer-reviewed
-    design:
-      columns: '2'
-      view: citation
-
-  # Competitions (custom markdown)
-  - block: markdown
-    id: competitions
     content:
       title: Competitions
-      text: |
-        - 3rd place in the [ICDAR 2017 Robust Reading Competition on Multilingual Scene Text Detection and Script Identification](http://rrc.cvc.uab.es/?ch=8) in the task of script identification
+      filters:
+        folders:
+          - competitions
     design:
-      columns: '2'
-
-  # Awards (custom markdown)
-  - block: markdown
-    id: awards
+      view: citation
+  - block: resume-awards
     content:
       title: Awards
-      text: |
-        - MIRU 2020 Student Paper Award (Hataya R., Zdenek J., Yoshizoe K., Nakayama H.)
-        - The Japanese Society for Artificial Intelligence (JSAI) Annual Conference Student Incentive Award 2017
-        - Japanese Government (MEXT) Scholarship for Research Students
-        - Dean's Award for an Outstanding Bachelor Thesis, Czech Technical University, 2014
+      username: me
+      # Page type to display. E.g. post, talk, publication...
+      # page_type: blog
+      # Choose how many pages you would like to display (0 = all pages)
+      # count: 10
+      # Filter on criteria
+      # filters:
+      #   folders: awards
+      #   author: ''
+      #   category: ''
+      #   tag: ''
+      #   exclude_featured: false
+      #   exclude_future: false
+      #   exclude_past: false
+      #   publication_type: ''
+      # Choose how many pages you would like to offset by
+      # offset: 0
+      # Page order: descending (desc) or ascending (asc) date.
+      # order: desc
     design:
-      columns: '2'
-
-  # Teaching (custom markdown)
+      # Choose a layout view
+      view: citation
+      # Reduce spacing
+      spacing:
+        padding: [0, 0, 0, 0]
   - block: markdown
-    id: teaching
     content:
-      title: Teaching
-      text: |
-        I have worked as a teaching assistant for the following courses at the University of Tokyo, Graduate School of Information Science and Technology:
+      title: Other activities
+      text: |-
+        **Teaching assistant**
 
-        - Data Science
-    design:
-      columns: '2'
+        I have worked as a teaching assistant for Data Science course at the University of Tokyo, Graduate School of Information Science and Technology.
 
-  # Contact section
-  - block: contact
-    id: contact
+        **Peer review**
+
+        I have served as a reviewer for academic conferences such as CVPR, ECCV, ICCV, ICLR, AAAI, SIGGRAPH, and journals such as TIP.
+  - block: resume-languages
     content:
-      title: Contact
-      subtitle: ''
-      text: ''
-      email: jan@nlab.ci.i.u-tokyo.ac.jp
-      phone: ''
-      address:
-        street: 1-1-1 Yayoi, Bunkyo
-        city: Tokyo
-        region: ''
-        postcode: '113-0032'
-        country: Japan
-        country_code: JP
-      coordinates:
-        latitude: '35.715826'
-        longitude: '139.761044'
-      contact_links:
-        - icon: twitter
-          icon_pack: fab
-          name: Twitter
-          link: https://twitter.com/jan_zde
-        - icon: github
-          icon_pack: fab
-          name: Github
-          link: https://github.com/kurapan
-        - icon: linkedin
-          icon_pack: fab
-          name: LinkedIn
-          link: https://www.linkedin.com/in/jan-zdeněk-3907b74a
-        - icon: google-scholar
-          icon_pack: ai
-          name: Google Scholar
-          link: https://scholar.google.co.jp/citations?user=qylVL6wAAAAJ
-        - icon: researchgate
-          icon_pack: ai
-          name: ResearchGate
-          link: https://www.researchgate.net/profile/Jan_Zdenek
+      title: Languages
+      username: me
+  - block: cta-card
+    demo: true # Only display this section in the HugoBlox Kit demo site
+    content:
+      title: 👉 Build your own academic website like this
+      text: |-
+        This site is generated by HugoBlox Kit - the FREE, Hugo-based open source website builder trusted by 250,000+ academics like you.
+
+        <a class="github-button" href="https://github.com/HugoBlox/kit" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star HugoBlox/kit on GitHub">Star</a>
+
+        Easily build anything with blocks - no-code required!
+
+        From landing pages, second brains, and courses to academic resumés, conferences, and tech blogs.
+      button:
+        text: Get Started
+        url: https://hugoblox.com/templates/
     design:
-      columns: '2'
+      card:
+        # Card background color (CSS class)
+        css_class: 'bg-primary-300 dark:bg-primary-700'
+        css_style: ''
 ---
